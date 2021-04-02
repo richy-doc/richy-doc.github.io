@@ -1,0 +1,27 @@
+@import 'config';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+html {
+  font-size: $main-font-size;
+  color: $menu-text-color;
+  background-color: $primary-color-full;
+  // background-color: $step-0-back-color;
+}
+
+body {
+  width: 100%;
+}
+
+.closeDiv {
+  cursor: pointer;
+}
+
+p {
+  margin: 10px auto;
+}

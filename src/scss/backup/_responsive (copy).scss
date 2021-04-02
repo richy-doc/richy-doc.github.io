@@ -1,0 +1,146 @@
+@import 'config';
+
+$font-size-responsive-small: $font-size - 1rem;
+$font-size-responsive-medium: $font-size - 0.8rem;
+
+@media screen and (max-width:768px) {
+  
+  .menu-wrap {
+  
+    .menu {
+  
+      > div {
+  
+        > div {
+  
+          > div {
+  
+            > p {
+              font-size: $font-size-responsive-small;
+            }
+  
+            > div > div > p {
+              font-size: $font-size-responsive-small;
+            }
+          } 
+        }
+      }
+    }
+  
+    .has-sub-menu {
+      > p {
+        font-size: $font-size-responsive-small;
+      }
+      &.active {
+        > p {
+          font-size: $font-size-responsive-small;
+        }
+      }
+      
+    }
+  
+    .sub-menu-div {
+      .sub-menu {
+
+        font-size: $font-size-responsive-small;
+  
+        &:before {
+          font-size: $font-size-responsive-small;
+        }
+      }
+  
+      &.form-0, &.form-1, &.form-2, &.form-3 {
+        .sub-item-li {
+          &.item-0.active {  
+            &:after {
+              font-size: $font-size-responsive-small;
+            }
+          }
+          &.item-1.active {  
+            &:after {
+              font-size: $font-size-responsive-small;
+            }
+          }
+          &.item-2.active {  
+            &:after {
+              font-size: $font-size-responsive-small;
+            }
+          }
+        }   
+      } // form 0, 1, 2, 3
+  
+    }  
+  }
+   
+} // END of small < 768 px
+
+@media screen and (max-width:1024px) and (min-width:769px){
+  
+  .menu-wrap {
+  
+    .menu {
+  
+      > div {
+  
+        > div {
+  
+          > div {
+  
+            > p {
+              font-size: $font-size-responsive-medium;
+            }
+  
+            > div > div > p {
+              font-size: $font-size-responsive-medium;
+            }
+          } 
+        }
+      }
+    }
+  
+    .has-sub-menu {
+      > p {
+        font-size: $font-size-responsive-medium;
+      }
+      &.active {
+        > p {
+          font-size: $font-size-responsive-medium;
+        }
+      }
+      
+    }
+  
+    .sub-menu-div {
+      .sub-item {
+
+        font-size: $font-size-responsive-medium;
+  
+        &:before {
+          font-size: $font-size-responsive-medium;
+        }
+      }
+  
+      &.form-0, &.form-1, &.form-2, &.form-3 {
+        .sub-item {
+          &.item-0.active {  
+            &:after {
+              font-size: $font-size-responsive-medium;
+            }
+          }
+          &.item-1.active {  
+            &:after {
+              font-size: $font-size-responsive-medium;
+            }
+          }
+          &.item-2.active {  
+            &:after {
+              font-size: $font-size-responsive-medium;
+            }
+          }
+        }   
+      } // form 0, 1, 2, 3
+  
+    }  
+  }
+   
+} // END of medium < 1024 px and > 769 px

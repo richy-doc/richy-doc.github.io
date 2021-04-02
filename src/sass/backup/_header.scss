@@ -1,0 +1,91 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: $nav-font-size;
+  min-height: 8vh;
+  color: $nav-color-text;
+  background-color: $nav-back-color;
+
+}
+.navbar {
+  background-color: $nav-back-color;
+  color: $nav-color-text;
+  font-size: $nav-font-size;
+  .menu {
+    display: flex;
+    list-style-type: none;
+
+    .menu-item {
+      position: relative;
+
+      a {
+        display: block;
+        color: $nav-color-text;
+        text-decoration: none;
+        padding: 10px 25px;
+
+        &:hover {
+          color:$nav-hover-text-color;
+          background-color: $nav-hover-color;
+        }
+      }
+
+      &.has-sub-menu { 
+        >a {
+          position: relative;
+          padding-right: 35px;
+          &:after {
+            content: url('../images/menu-arrow.png');
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            transform: translate(50%, -50%) scale(.3);
+            // transform: translateY(-50%) scale(.5);
+            color: $nav-color-text;
+            font-size: $nav-font-size;
+            font-weight: 500;
+          }
+          &:hover {
+            &:after {
+              color: $nav-hover-text-color;
+            }
+          }
+        }
+
+        .sub-menu {
+          position: absolute;
+          z-index: 999;
+          opacity: 0;
+          // transform: translateY(20px);
+          // transform: scaleY(0);
+          pointer-events: none;
+          transition: 0.4s ease-out;
+
+          min-width: 100%;
+          width: max-content;
+          background-color: $nav-back-sub-menu-color;
+          list-style-type: none;
+
+          .menu-item {
+            width: 100%;
+          }
+        }
+
+        &:hover {
+          > .sub-menu {
+            opacity: 1;
+            // transform: translateY(0);
+            // transform: scaleY(100%);
+            pointer-events: all;
+            .sub-menu {
+              top:0;
+              right: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

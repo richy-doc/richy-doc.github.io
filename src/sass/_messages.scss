@@ -1,0 +1,67 @@
+%message-shared {
+  // margin: 0.2rem;
+  margin-top: 10px;
+  padding: 0.5rem;
+  border-radius: .25rem;
+  font-size: 0.8rem;
+  text-align: center; 
+  justify-content: center;
+  // width: $first-col-grid + $step-next-width + 10px;
+  // width: $first-col-grid + $step-next-width;
+}
+
+.message {
+  @extend %message-shared;
+  background-color: white;
+}
+
+.error {
+  @extend %message-shared;
+  color: $error-text-color;
+  border-color: $error-border-color;
+  background-color: $error-back-color;
+}
+
+.success {
+  @extend %message-shared;
+  color: $success-text-color;
+  border-color: $success-border-color;
+  background-color: $success-back-color;
+}
+
+.warning {
+  @extend %message-shared;
+  color: $warning-text-color;
+  border-color: $warning-border-color;
+  background-color: $warning-back-color;
+}
+
+.hidden {
+  display: none;
+}
+
+.blinking {
+  margin: 0 0.2rem;
+  padding: 0 0.2rem;
+  background-color: $error-border-color;
+  // background-color: $blink-back-color;
+  animation:blinkingText 1.2s infinite;
+}
+.blinking_plus_minus {
+  display: inline-block;
+  width: 50px;
+  margin: .01rem 0.2rem;
+  padding: 0 0.2rem;
+  text-align: center;
+  // width: 200px;
+  background-color:$blink-minus-plus-back-color;
+  animation:blinkingText 1.2s infinite;
+}
+
+@keyframes blinkingText {
+  0%{color: $blink-text-color;}
+  49%{color: $blink-text-color;}
+  60%{color: transparent;}
+  99%{color: transparent;}
+  100%{color: $blink-text-color;}
+}

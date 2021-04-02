@@ -1,0 +1,129 @@
+@import 'config';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+html {
+  font-size: $main-font-size;
+  color: $menu-text-color;
+  background-color: $primary-color-full;
+
+  // background: $back-game-window-no-opacity no-repeat center center fixed;
+  background: $back-game-window-opacity-70 no-repeat center center fixed;
+
+  background-size: cover;
+  user-select: none;
+}
+
+::-webkit-scrollbar {
+  width: 0.8rem;
+  // background-color: $btn-back-color $btn-shadow-color;
+}
+::-webkit-scrollbar-track {
+  // box-shadow: inset 0 0 5px $btn-shadow-color; 
+  background-color: $btn-shadow-color;
+  // border-radius: 0.8rem;
+}
+::-webkit-scrollbar-thumb {
+  background: $btn-back-color; 
+  border-radius: 0.8rem;
+}
+
+.para {
+  padding: 0 0.5rem;
+
+  .red-text {
+    color: red;
+  }
+
+  &.div-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0rem;
+    margin-bottom: 1rem;
+    background-image: linear-gradient(black, white, black);
+    color: black;
+    &:before, &:after {
+      content: "";
+      width: 100vw;
+      height: 0.5rem;
+      background-image: linear-gradient(black, white, black);
+    }
+  }
+
+  &.div-first, &.div-info, &.div-last {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0rem;
+    &:before, &:after {
+      content: "";
+      width: 100vw;
+      height: 0.5rem;
+      background-image: linear-gradient(black, white, black);
+    }
+  }
+  >p {
+    // margin-top: 0.5rem;
+    margin: 0.5rem 0;
+    .btn-color {
+      color: $btn-text-color;
+      background-color: $btn-back-color;
+      padding: 0 0.5rem;
+      border-radius: 0.5rem;
+    }
+    .red-text {
+      color: red;
+    }
+  }
+  > .center {
+    // text-align: center;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    >.red-text {
+      color: red;
+    }
+    >img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  > ol li {
+    margin-left: 2rem;
+  }
+  > ul li {
+    margin-left: 2rem;
+    list-style-type: disc;
+  }
+}
+
+body {
+  width: 100%;
+}
+
+.showcase {
+  width: 100%;
+  height: 100%;
+  // background-color: rgba(0,0,0,0.3);
+}
+
+.closeDiv {
+  // position: sticky;
+  top: 0;
+  width: 100%;
+  padding: 0.5rem;
+  text-align: center;
+  // background-color: $game-sticky-back;
+}
+
+p {
+  margin: 10px auto;
+}

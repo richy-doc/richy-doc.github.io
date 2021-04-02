@@ -1,0 +1,43 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: $nav-font-size;
+  min-height: 8vh;
+  color: $nav-color-text;
+  background-color: $nav-back-color;
+
+  .logo {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+  }
+
+  .nav-links {
+    display: flex;
+
+    li { 
+      list-style: none;
+      padding: 20px;
+    }
+
+    a {
+      color: $nav-color-text;
+      text-decoration: none;
+    }
+  }
+
+  .burger {
+    display: none;
+    margin-right: 20px;
+    cursor: pointer;
+  
+    div {
+      margin: 5px;
+      width: 25px;
+      height: 2px;
+      background-color: $nav-color-text;
+      transition: all 0.3s ease;
+    }
+  }
+}
+

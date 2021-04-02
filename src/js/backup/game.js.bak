@@ -1,0 +1,84 @@
+import {Language} from '../utils/language.js';
+import '../scss/game.scss';
+
+import CreateDivFnc from './utils/createDiv.js';
+
+import {ProbFnc} from './utils/prob.js';
+
+const htmlEl = document.getElementsByTagName('html')[0];
+
+// Declaration all elements in index.html
+
+const formDiv = CreateDivFnc({classes:['step-next', 'step-00', 'formDiv'], step: page.form,});
+
+const probTxt = CreateDivFnc({classes:['step-next', 'step-0', 'probDiv'], step:page.decompose,});
+
+const etape_1 = CreateDivFnc({classes:['step-next', 'step-1'], step:page.step1,});
+const etape_2 = CreateDivFnc({classes:['step-next', 'step-2'], step:page.step2,});
+const etape_3 = CreateDivFnc({classes:['step-next', 'step-3'], step:page.step3,});
+
+const formButton = CreateDivFnc({classes:['step-next', 'step-button'], step:'',});
+
+// const info = document.querySelector('.info');
+// const about = document.querySelector('.about');
+// const infoClick = document.querySelector('.info-click');
+// const aboutClick = document.querySelector('.about-click');
+
+const checkBox = document.querySelector('.toggler');
+
+const divBtn = document.createElement('div');
+
+const btn = document.createElement('button');
+
+const step1DivMsg = document.createElement('div');
+
+const step2DivMsg = document.createElement('div');
+
+const step3DivMsg = document.createElement('div');
+
+const nextProbMsg = document.createElement('div');
+
+const heading = document.createElement('div');
+
+
+const menuItem = document.querySelectorAll('.nemu-item');
+
+
+const app = document.querySelector('.root');
+
+divBtn.classList.add('divBtn');
+
+btn.innerHTML = page.button;
+divBtn.append(btn);
+
+// END of declaration all elements in index.html
+
+let lang = Language.LanguageFr;
+let info = lang.info();
+
+// function get() {
+//   console.log('Menu =', menu,' and sub menu=', subMenu);
+// }
+
+function get() {
+  let params = new URLSearchParams(window.location.search);
+  let menu = params.get("menu");
+  let subMenu = params.get("subMenu");
+  console.log('Menu =', menu,' and sub menu=', subMenu);
+}
+
+// console.log('Menu =', menu,' and sub menu=', subMenu)
+
+
+
+document.addEventListener('click', get);
+
+window.addEventListener("load", get)
+
+
+htmlEl.style.fontSize = Math.floor(Math.min( (window.innerWidth/768) * 150 , 200)) +'%';
+
+
+window.addEventListener('resize', function (params) {
+  htmlEl.style.fontSize = Math.floor(Math.min( (window.innerWidth/768) * 150 , 200)) +'%';
+});

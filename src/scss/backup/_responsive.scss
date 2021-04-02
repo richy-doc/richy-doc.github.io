@@ -1,0 +1,106 @@
+@import 'config';
+
+@media screen and (max-width:768px) {
+
+  // $main-font-size: 1rem;
+  $small-font-size: $main-font-size * 0.5;
+  $small-sub-menu: $main-font-size * 0.25;
+  $small-accolade: $main-font-size * 1.2;
+
+
+  .step-next {
+    font-size: $small-font-size;
+  }
+
+  .has-sub-menu > p {
+    font-size: $small-font-size;
+  }
+
+  .has-sub-menu > p:before {
+    font-size: $small-font-size;
+  }
+
+  .menu-wrap .accolade {
+    margin-top: -5px;
+    &.form-0 {
+      font-size: $small-font-size * 1.2;
+    }
+    &.form-1 {
+      font-size: $small-font-size  * 1.2;
+    }
+    &.form-2 {
+      font-size: $small-font-size  * 1.2;
+    }
+    &.form-3 {
+      font-size: $small-font-size  * 2;
+    }
+    // font-size: $font-accolade-small;
+  }
+
+  // .sub-menu-div .sub-menu .sub-item-li {
+  //   font-size: $main-font-size - 1.5rem;
+  // }
+
+  .sub-menu-div .sub-menu:before {
+      font-size: $small-font-size * 0.6;
+  }
+
+  .menu-wrap .menu .first-div .second-div>div {
+    font-size:  $small-font-size;
+    .sub-menu-div {
+      .sub-menu > ul > li {
+        font-size: $small-font-size * 0.6;
+      }
+    }
+  }
+} // END of small < 768 px
+
+@media screen and (max-width:1024px) and (min-width:769px){
+
+  $medium-font-size: $main-font-size * 0.6;
+  $medium-sub-menu: $main-font-size * 0.5;
+  $medium-accolade: $main-font-size * 1.2;
+  
+  .has-sub-menu > p {
+    font-size: $medium-font-size;
+  }
+
+  .has-sub-menu > p:before {
+    font-size: $medium-font-size;
+  }
+
+  .menu-wrap .accolade {
+    margin-top: -5px;
+    &.form-0 {
+      font-size: $medium-font-size * 1.2;
+    }
+    &.form-1 {
+      font-size: $medium-font-size * 1.2;
+    }
+    &.form-2 {
+      font-size: $medium-font-size * 1.2;
+    }
+    &.form-3 {
+      font-size: $medium-font-size * 2;
+    }
+    // font-size: $font-accolade-medium;
+  }
+
+  // .sub-menu-div .sub-menu .sub-item-li {
+  //   font-size: $main-font-size - 1rem;
+  // }
+
+  .sub-menu-div .sub-menu:before {
+      font-size: $medium-font-size * 0.6;
+  }
+
+  .menu-wrap .menu .first-div .second-div>div {
+    font-size: $medium-font-size;
+    .sub-menu-div {
+      .sub-menu > ul > li {
+        font-size: $medium-font-size * 0.6;
+      }
+    }
+  }
+   
+} // END of medium < 1024 px and > 769 px

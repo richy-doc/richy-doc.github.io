@@ -1,0 +1,267 @@
+@import 'config';
+@import 'buttons';
+@import 'messages';
+@import 'menu';
+
+::-webkit-scrollbar {
+  width: 0.8rem;
+  // background-color: $btn-back-color $btn-shadow-color;
+}
+::-webkit-scrollbar-track {
+  // box-shadow: inset 0 0 5px $btn-shadow-color; 
+  background-color: $btn-shadow-color;
+  border-radius: 0.8rem;
+}
+::-webkit-scrollbar-thumb {
+  background: $btn-back-color; 
+  border-radius: 10px;
+}
+
+* {
+  // *, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+html {
+  // font-size: $main-font-size;
+  color: $font-color;
+  background-image: linear-gradient($primary-color-full, white);
+  scrollbar-color: $btn-back-color $btn-shadow-color;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  scrollbar-color: $btn-back-color $btn-shadow-color;
+}
+
+.showcase {
+  background-color: $primary-color;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  padding-top: 10vh;
+  // overflow: scroll;
+  // overflow-y: scroll;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scrollbar-color: $btn-back-color $btn-shadow-color;
+
+  .container {
+    margin:0 auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    background-color: $primary-color;
+    scrollbar-color: $btn-back-color $btn-shadow-color;
+
+    .main-window {
+      width: 100vw;
+      height: 100vh;
+      margin:  0 auto;
+      // margin: 60px;
+      display: grid;
+      justify-content: center;
+      align-content: flex-start;
+      // gap: 5px;
+      grid-template-columns: 20rem 5rem;
+      overflow-y: auto;
+      scrollbar-color: $btn-back-color $btn-shadow-color;
+    
+      .root {
+        display: flex;
+        flex-direction: column;
+        align-content: flex-start;
+        // overflow-y: scroll;
+        // align-content: center;
+        // justify-content: flex-start;
+        z-index: 10;
+        scrollbar-color: $btn-back-color $btn-shadow-color;
+
+        .step {
+          margin-top: 10px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          .etape {
+            margin-right: 0.5rem;
+            // min-width: 6rem;
+            // text-align: end;
+            color: $step-0-text-color;
+            font-size: 1rem;
+
+            padding: 0.5rem;
+            height: 2.5rem;
+            // font-size: 1rem;
+            width: 8rem;
+            border-radius: 5px;
+            background-color: $step-0-back-color;
+            
+          }
+          .step-next {
+            z-index: 4;
+            letter-spacing: 2px;
+            padding: 0.5rem;
+            height: 2.5rem;
+            font-size: 1rem;
+            width: 15rem;
+            outline-style: none;
+            white-space: nowrap;
+            overflow: hidden;
+            border-radius: 5px;
+            background-color: $next-step-back-color;
+
+            &.step-0 {
+              letter-spacing: 2px;
+              color: $step-0-text-color ;
+              border-color: $step-0-border-color;
+              background-color: $step-0-back-color;
+            }
+            
+            &.step-00 {
+              letter-spacing: 2px;
+              color: $step-0-text-color ;
+              border-color: $step-0-border-color;
+              background-color: $step-0-back-color;
+            }
+
+            &.step-button {
+              background: transparent;
+            }
+          } // END of step-next
+          
+          .step-next br {
+            display: none;
+          }
+          
+          .step-next:focus-within {
+            background-image: $next-step-back-image;
+            background-size: 100% 100%;
+          } 
+        } // END of step
+
+        .message {
+          width: 20rem;
+        }
+
+
+      } // END of root
+
+      .col2 {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+
+        .lights {
+          width: 3rem;
+          height: 7rem;
+  
+          background-image: url('../images/lights_all_off.png');
+          background-repeat: no-repeat;
+          background-size: 100%;
+        }
+
+        .locked { 
+          // position: relative;
+  
+          text-align: center;
+          // margin-top: 5rem;
+  
+          font-size: 1rem;
+          width: 3rem;
+          height: 6rem;
+          // margin-left: auto 0;
+          padding-top: 3.5rem;
+          color: $next-step-text-color;
+          // display: flex;
+          // align-self: center;
+          // // align-content: flex-end;
+          // justify-content: center;
+          background-image: url('../images/cadenas_close_200x400.png');
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+
+          &:after {
+            content: "/5";
+          }
+        }
+
+      }
+
+      
+    } // END of main window
+  } // END of container
+
+  #canvasId {
+    position: fixed;
+    top: 0;
+    // left: 0;
+    width: 100%;
+    height: 100%;
+    // margin-top: 5vw;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    // align-self: center;
+    justify-content: center;
+    // border: 2px solid black;
+    z-index: -2;
+  }
+} // END of showcase
+
+.info, .about {
+
+  position: absolute;
+  top: 3rem;
+  left: 5vw;
+  width: 90vw;
+  height: 80vh;
+  margin: 0 auto;
+
+  border-radius: 10px;
+  border: 5px solid $game-border-window;
+  border-style: groove;
+  border-bottom-width: 15px;
+
+  background-image: $back-game-window-opacity-70;
+  background-size: 100% 100%;
+
+  // position: absolute;
+  // top: 3rem;
+  // left: 5vw;
+  // width: 90vw;
+  // height: 80vh;
+  // margin: 0 auto;
+  
+  z-index: 100;
+
+  > iframe {
+    width: 100%;
+    height: 100%;
+  }
+
+  display: none;
+  // cursor: pointer;
+
+  &.show {
+    display: inline-block;
+  }
+}
+
+.no-bullet {
+  list-style-type: none;
+}

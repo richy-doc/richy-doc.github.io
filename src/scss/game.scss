@@ -1,0 +1,398 @@
+@import 'config';
+@import 'buttonsgame';
+@import 'messages';
+@import 'gamemenu';
+
+::-webkit-scrollbar {
+  width: 0.8rem;
+  // background-color: $btn-back-color $btn-shadow-color;
+}
+::-webkit-scrollbar-track {
+  // box-shadow: inset 0 0 5px $btn-shadow-color; 
+  background-color: $btn-shadow-color;
+  // border-radius: 0.8rem;
+}
+::-webkit-scrollbar-thumb {
+  background: $btn-back-color; 
+  border-radius: 10px;
+}
+
+* {
+  // *, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+html {
+  font-size: $main-font-size;
+  color: $font-color;
+  // background-image: linear-gradient($primary-color-full, $font-color-on-borad);
+  // scrollbar-color: $btn-back-color $btn-shadow-color;
+  background: url('../images/image_0.png') no-repeat center center fixed;
+  background-size: cover;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  // width: 100vw;
+  // height: 100vh;
+
+  // display: flex;
+  // align-content: center;
+  // justify-content: center;
+}
+
+.divHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  color: $step-0-text-color;
+  font-size: 2rem;
+
+  padding: 0.5rem;
+  height: 4rem;
+  // font-size: 1rem;
+  width: 23.5rem;
+  border-radius: 5px;
+  background-color: $step-0-back-color;
+}
+
+.clock {
+  font-family: 'Courier New', Courier, monospace;
+  // font-family: 'Times New Roman', Times, serif;
+  font-weight: 600;
+  display: flex;
+  padding: 0.5rem;
+  // background-color: rgba($color: #000000, $alpha: 0.5);
+  // background: url('../images/chrono_contour.png');
+  background-image: $chrono-back-image;
+  background-size: 100% 100%;
+}
+
+.clockMin::after {
+  content: ":";
+}
+
+.clockSec::after {
+  content: ",";
+}
+
+.showcase {
+  // background-color: $primary-color;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  padding-top: 10vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scrollbar-color: $btn-back-color $btn-shadow-color;
+
+  .container {
+    margin:0 auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    background-color: $primary-color;
+    scrollbar-color: $btn-back-color $btn-shadow-color;
+
+    .main-window {
+      width: 100vw;
+      height: 100vh;
+      margin:  0 auto;
+      // margin: 60px;
+      display: grid;
+      justify-content: center;
+      align-content: center;
+      // align-content: flex-start;
+      // gap: 5px;
+      grid-template-columns: 25rem;
+      overflow-y: auto;
+      scrollbar-color: $btn-back-color $btn-shadow-color;
+    
+      .root {
+        display: flex;
+        flex-direction: column;
+        align-content: flex-start;
+        // overflow-y: scroll;
+        // align-content: center;
+        // justify-content: flex-start;
+        z-index: 10;
+        scrollbar-color: $btn-back-color $btn-shadow-color;
+
+        .step {
+          margin-top: 10px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          .etape {
+            margin-right: 0.5rem;
+            // min-width: 6rem;
+            // text-align: end;
+            color: $step-0-text-color;
+            font-size: 1rem;
+
+            padding: 0.5rem;
+            height: 2.5rem;
+            // font-size: 1rem;
+            width: 8rem;
+            border-radius: 5px;
+            background-color: $step-0-back-color;
+            
+          }
+          .step-next {
+            z-index: 4;
+            letter-spacing: 2px;
+            padding: 0.5rem;
+            height: 2.5rem;
+            font-size: 1rem;
+            width: 15rem;
+            outline-style: none;
+            white-space: nowrap;
+            overflow: hidden;
+            border-radius: 5px;
+            background-color: $next-step-back-color;
+
+            &.step-0 {
+              letter-spacing: 2px;
+              color: $step-0-text-color ;
+              border-color: $step-0-border-color;
+              background-color: $step-0-back-color;
+            }
+            
+            &.step-00 {
+              letter-spacing: 2px;
+              color: $step-0-text-color ;
+              border-color: $step-0-border-color;
+              background-color: $step-0-back-color;
+            }
+
+            &.step-button {
+              background: transparent;
+            }
+          } // END of step-next
+          
+          .step-next br {
+            display: none;
+          }
+          
+          .step-next:focus-within {
+            background-image: $next-step-back-image;
+            background-size: 100% 100%;
+          } 
+        } // END of step
+
+        .message {
+          width: 20rem;
+        }
+
+
+      } // END of root
+      
+    } // END of main window
+  } // END of container
+
+} // END of showcase
+
+.menu-info {
+  cursor: pointer;
+}
+
+.info-game-iframe {
+  position: absolute;
+  top: 3rem;
+  left: 5vw;
+  width: 90vw;
+  height: 80vh;
+  margin: 0 auto;
+
+  border-radius: 10px;
+  border: 5px solid $game-border-window;
+  border-style: groove;
+  border-bottom-width: 15px;
+
+  background-image: $back-game-window-opacity-70;
+  background-size: 100% 100%;
+
+  // margin-left: 2rem;
+  // display: flex;
+  // align-content: center;
+  // justify-content: center;
+  // padding: 50px 50px 50px 50px;
+  // overflow: hidden;
+  z-index: 100;
+
+  > iframe {
+    width: 100%;
+    height: 100%;
+  }
+
+  display: none;
+  // cursor: pointer;
+
+  &.show {
+    display: inline-block;
+  }
+}
+
+.message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30rem;
+  margin-left: -15rem;
+  height: auto;
+  // display: flex;
+  color: $error-text-color;
+  background-color: $error-back-color;
+  border-radius: 5px;
+  border-color: $error-border-color;
+  display: none;
+  &.show {
+    display: block;
+    z-index: 20;
+  }
+}
+
+.msg-block {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30rem;
+  height: 10rem;
+  margin-left: -15rem;
+  margin-top: -2.5rem;
+  padding-top: 2rem;
+  // height: auto;
+  // padding: 5rem 5rem;
+  // display: flex;
+  // display: flex;
+  // align-content: center;
+  // justify-content: center;
+  color: $error-text-color;
+  background-color: $error-back-color;
+  border-radius: 5px;
+  border-color: $error-border-color;
+
+  text-align: center;
+  vertical-align: middle;
+  display: none;
+
+  z-index: 1000;
+  // display: block;
+  &.show {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 1000;
+  }
+}
+
+.resume {
+  position: fixed;
+  top: 3rem;
+  left: 50%;
+  margin: 0 auto;
+  width: 90vw;
+  height: 80vh;
+  margin-left: -45vw;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  color: $font-color-on-borad;
+  // background-color: $error-back-color;
+  border-radius: 10px;
+  border: 5px solid $game-border-window;
+  border-style: groove;
+  border-bottom-width: 15px;
+  background-image: $back-game-window-opacity-70;
+  background-size: 100% 100%;
+
+  overflow-y: auto;
+
+  display: none;
+  &.show {
+    display: grid;
+    z-index: 20;
+  }
+
+  // &:after {
+  //   content: '';
+  //   width: 100%;
+  //   height: 15px;
+  //   background-image: linear-gradient(to bottom, rgba(75,42,8,1),white, rgba(75,42,8,1));
+  // }
+}
+
+.sticky {
+  // position: sticky;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  color: $font-color-on-borad;
+  // background-color: $game-sticky-back;
+  // background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.9));
+  padding: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.clickToClose {
+  width: 100%;
+  text-align: center;
+  color: $font-color-on-borad;
+  // background-color: $game-sticky-back;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.div-table {
+  margin: 1rem 0;
+  width: 90%;
+}
+
+thead, tfoot {
+  // background: url('../images/image_0.png');
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.9));
+}
+
+thead {
+  tr, td {
+    text-align: center;
+  }
+}
+
+th, td {
+  border: 2px solid $font-color-on-borad;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: rgba(0,0,0,0.2);
+}
+
+table {
+  border-collapse: collapse;
+  // background-color: #ff33cc;
+  // border: 2px solid black;
+}
+
+li::before {
+  content: '=';
+  // content: '\02261';
+  color: $font-color-on-borad;
+  margin-right: 0.2rem;
+}

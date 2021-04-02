@@ -1,0 +1,60 @@
+// $primary-color-full: rgba(13, 110, 139,1);
+// $primary-color: rgba(13, 110, 139, 0.6);
+// $overly-color: rgba(24, 39, 51, 0.85);
+$primary-color-full: rgba(13, 110, 139,1);
+$primary-color: rgba(39, 63, 47, 0.7);
+$overly-color: rgba(24, 39, 51, 0.85);
+// $primary-color-full: rgba(13, 110, 139,1);
+// $primary-color: rgb(102, 105, 101);
+// $overly-color: rgba(24, 39, 51, 0.85);
+$menu-speed: 0.75s;
+
+$main-font-size: 200%;
+$font-size-msg: 0.8rem;
+$font-color: black;
+$back-color: #ccc;
+
+$first-col-grid: 200px;
+$second-col-grid: 700px;
+$step-next-width: 450px;
+
+$menu-text-color: white;
+$menu-sub-text-color: rgb(172, 196, 162);
+$menu-sub-text-hover-color: rgb(78, 233, 12);
+$menu-sub-text-active-color: red;
+
+$step-back-color: rgb(211, 215, 233);
+$step-text-color: white;
+$step-back-image: white;
+
+$step-0-back-color: rgb(165, 161, 161);
+// $step-0-back-color: rgb(245, 238, 238);
+$step-0-text-color:  rgb(22, 15, 15);
+$step-0-border-color: #b6d4fe;
+
+$next-step-back-color: white;
+$next-step-text-color: white;
+$next-step-back-image: url('../images/contour_2.png');
+
+$btn-back-color:#267526;
+$btn-text-color:white;
+$btn-shadow-color:#00a04f;
+$btn-focus-color:rgb(26, 104, 26);
+
+$error-text-color:#842029;
+$error-back-color:#f8d7da;
+$error-border-color:#f5c2c7;
+
+$warning-text-color:#664d03;
+$warning-back-color:#fff3cd;
+$warning-border-color:#ffecb5;
+
+$success-text-color:#0f5132;
+$success-back-color:#d1e7dd;
+$success-border-color:#badbcc;
+
+$blink-text-color:black;
+$blink-back-color:lightgray;
+
+$blink-minus-plus-text-color:black;
+$blink-minus-plus-back-color:#e7c03f;

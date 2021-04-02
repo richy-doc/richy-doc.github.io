@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="./styles/infogame.css">
+  <title>Informations usr les options</title>
+</head>
+<body>
+
+  <div class="showcase">
+    <div class="closeDiv"></div>
+
+    <div class="para div-first">
+      <p>
+        Informations sur le menu.
+      </p>
+    </div>
+    
+    <div class="para div1">
+      <p>
+      Le menu "Effets sonores" vous permet d'avoir une musique de fond et du bruitage dans le jeu. Si vous cochez le menu "Tentatives différentes", de nouveaux problèmes seront générés à chaque tentative. Sinon, les même problèmes reviendront à tour de role. 
+      </p>
+      <p>
+      Le dernier choix que vous avez à faire est de choisir une et une seule des quatre options de jeu.
+      </p>
+      
+    </div>
+
+    <div class="para div-info">
+      <p>
+        Informations sur les options.
+      </p>
+    </div>
+
+    <div class="para div20">
+      <p>
+      Dans toutes les options, chaque bonne décomposition vous donne un point et chaque mauvaise vous enlève un point.
+      </p>
+      <p>
+        Le nombre maximal de décompositions disponibles est fixé à 400. Si jamais ce nombre est dépassé, la correction se fera sur les 400 premiers.
+      </p>
+      <p>
+        La réponse finale doit être en puissance décroissante de la variable pour être acceptée. Par exemple: si la réponse finale est (x-2)(x+4) alors une réponse comme (-2+x)(x+4) sera refusée même si elle a été considérée acceptable en apprentissage. Les seules réponses qui seront acceptées sont: (x-2)(x+4), (x+4)(x-2), (-x+2)(-x-4) et (-x-4)(-x+2).
+      </p>
+    </div>
+
+    <div class="para div2">
+      <p>
+      La "Première option" consiste à faire le plus grand nombre de décompositions en deux minutes.
+      </p>
+      <p>
+        Quand vous cliquez le bouton <span class="btn-color">Commencer</span>, le chronomètre se déclanche et c'est à votre tour de jouer. Seule la touche <span class="red-text">"Entrée"</span> est permise pour passer au problème suivant. Si vous cliquez un bouton pendant le décompte, il sera interprété comme une entrée vide et donc comme une mauvaise réponse.
+      </p>
+      <p>
+        À la fin du décompte, le bouton <span class="btn-color">Correction</span> vous affiche un tableau de votre performance. Les essais sont conservés tant que vous restez dans la même option.
+      </p>
+    </div>
+    <div class="para div3">
+      <p>
+        La "Deuxième option" consiste à faire le plus grand nombre de décompositions en cinq minutes. Les autres contraintes sont identiques à la première option.
+      </p>
+    </div>
+    <div class="para div4">
+      <p>
+        La "Troisième option" consiste à faire le plus grand nombre de décompositions dans un temps minimal.
+      </p>
+      <p>
+        Quand vous cliquez le bouton <span class="btn-color">Commencer</span>, le chronomètre démarre. Vous devez entrer votre réponse le plus rapidement possible et pesez la touche <span class="red-text">"Entrée"</span>. Le chronomètre s'arrêtera. Quand vous vous sentez prêt(e), vous pesez à nouveau sur la touche <span class="red-text">"Entrée"</span> et le problème suivant s'affiche. 
+      </p>
+      <p>
+        Vous pouvez aussi cliquer le bouton <span class="btn-color">Recommencer</span> pour arrêter ou démarrer le chronomètre mais c'est moins rapide. Dans cette option, toutes les centièmes de seconde sont importantes.
+      </p>
+      <P>
+        Le temps maximal que peut durer un essai est de 15 minutes.
+      </P>
+      <p>
+        Le bouton <span class="btn-color">Correction</span> met fin à l'essai en cours et vous affiche le résultat final. Le temps est aussi remis à zéro.
+      </p>
+    </div>
+
+    <div class="para div5">
+      <p>
+        La "Quatrième option" consiste à faire le plus grand nombre de bonnes décompositions consécutives. Il n'y a pas de temps. Seul les 400 premiers problèmes sont analysés si jamais vous le dépassez.
+      </p>
+      <p>
+        Quand vous cliquez le bouton <span class="btn-color">Commencer</span>, le premier problème s'affiche. La touche <span class="red-text">"Entrée"</span> permet de passer au problème suivant.
+      </p>
+      <p>
+        Une mauvaise réponse ou si vous cliquez sur le bouton <span class="btn-color">Correction</span> met fin à l'essai en cours et vous affiche le résultat final.
+      </p>
+    </div>
+
+    <div class="para div-last">
+      <p>
+        Amusez-vous bien et que le meilleur gagne!
+      </p>
+    </div>
+
+    <div>&nbsp;</div>
+  </div>
+
+  <script src="./js/infogame.js" type="module"></script>
+  
+</body>
+</html>

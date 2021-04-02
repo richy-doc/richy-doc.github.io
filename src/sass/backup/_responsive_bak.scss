@@ -1,0 +1,187 @@
+
+@media screen and (max-width:768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .navbar {
+
+    .menu{
+      position: absolute;
+      right: 0%;
+      height: 50vh;
+      top: 8vh;
+      justify-content: space-between;
+      background-color: black;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      transform: translateX(100%);
+      transition: transform 0.5s ease-in;
+      .menu-item {
+        // opacity: 0;
+
+        &.has-sub-menu { 
+          >a {
+            position: relative;
+            padding-right: 35px;
+            &:after {
+              content: url('../images/menu-arrow.png');
+              display: block;
+              position: absolute;
+              top: 50%;
+              right: 15px;
+              // transform: translateY(-50%) scale(.3);
+              transform: translate(50%, -50%) scale(.3);
+              color: $nav-color-text;
+              font-size: $nav-font-size;
+              font-weight: 500;
+            }
+            &:hover {
+              &:after {
+                color: $nav-hover-text-color;
+              }
+            }
+          }
+  
+          .sub-menu {
+            position: absolute;
+            z-index: 999;
+            opacity: 0;
+            // transform: translateY(-200px);
+            // transform: scaleY(0);
+            pointer-events: none;
+            transition: 0.4s ease-out;
+  
+            min-width: 100%;
+            width: max-content;
+            background-color: $nav-back-sub-menu-color;
+            list-style-type: none;
+  
+            .menu-item {
+              width: 100%;
+              
+            }
+
+            
+          }
+  
+          &:hover {
+            > .sub-menu {
+              opacity: 1;
+              // transform: translateY(0);
+              // transform: scaleY(100%);
+              transform: translate(-100%, -50px);
+              // transform: translateY(-50px);
+              pointer-events: all;
+              .sub-menu {
+                // opacity: 1;
+                transform: translateY(0%);
+                // top:0;
+                // right: 100%;
+              }
+            }
+          }
+        }
+      }      
+    }
+  
+    .burger {
+      display: block;
+    }
+
+
+    .toggle-line .line1 {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .toggle-line .line2 {
+      opacity: 0;
+    }
+    .toggle-line .line3 {
+      transform: rotate(45deg) translate(-5px, -4px);
+    }
+
+    .nav-active{
+      transform: translateX(0%);
+    }
+  }
+  
+}
+
+@media screen and (max-width:768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: $nav-font-size;
+    min-height: 8vh;
+    color: $nav-color-text;
+    background-color: $nav-back-color;
+  
+    .logo {
+      text-transform: uppercase;
+      letter-spacing: 5px;
+    }
+  
+    .nav-links{
+      position: absolute;
+      right: 0%;
+      height: 50vh;
+      top: 8vh;
+      justify-content: space-between;
+      background-color: black;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      transform: translateX(100%);
+      transition: transform 0.5s ease-in;
+      li {
+        opacity: 0;
+      }
+      .nav-active{
+        transform: translateX(0%);
+      }
+    }
+  
+    .burger {
+      display: block;
+      // &:active{
+      //   display: none; 
+      // }
+    }
+
+
+    .toggle-line .line1 {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .toggle-line .line2 {
+      opacity: 0;
+    }
+    .toggle-line .line3 {
+      transform: rotate(45deg) translate(-5px, -4px);
+    }
+
+    .nav-active{
+      transform: translateX(0%);
+    }
+  }
+  
+}
+
+@keyframes navLinkFade {
+  from{
+    opacity: 0%;
+    transform: translateX(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
