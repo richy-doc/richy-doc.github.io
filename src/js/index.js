@@ -20,6 +20,16 @@ import makeSound from '../utils/makesound.js';
 
 // import musicWav from './utils/importsounds.js';
 
+//Shortcut for document function
+
+const dqs = (obj) => document.querySelector(obj);
+const dqsa = (obj) => document.querySelectorAll(obj);
+const dce = (obj) => document.createElement(obj);
+
+//Assets to load before showing the main page
+
+// console.log('Start = ', Date.now())
+
 let imagesToLoad = [
   "./images/image_0.png",
   "./images/image_1.png",
@@ -47,7 +57,11 @@ let music;
 // let music = assets["./sounds/music.wav"];
 // setupMusic();
 
-assets.load(arrayToLoad).then(() => showPage());
+assets.load(arrayToLoad).then(() => {
+  let calc = 0;
+  // for ( let i = 0; i < 10000; i +=1){ console.log('I=',i)}
+  showPage();
+});
 
 // let music  = makeSound("./sounds/music.wav", setupMusic);
 
@@ -62,7 +76,12 @@ function clgAsset() {
   // setupMusic();
 }
 
+// Main function to show the main page
+
 function showPage() {
+
+// console.log('Start show page = ', Date.now())
+
 
 music = assets["./sounds/music.wav"];
 // setupMusic();
@@ -78,10 +97,23 @@ const cadenas_close_200x400 = "url("+  assets["./images/cadenas_close_200x400.pn
 const htmlEl = document.getElementsByTagName('html')[0];
 const style = window.getComputedStyle(htmlEl, null).getPropertyValue('font-size');
 const fontSize = parseFloat(style);
-const lockedDiv = document.querySelector('.locked');
-const lights = document.querySelector('.lights');
+const lockedDiv = dqs('.locked');
+
+lockedDiv.style.backgroundImage = cadenas_close_200x400;
+lockedDiv.style.backgroundRepeat = "no-repeat";
+lockedDiv.style.backgroundSize = "100%";
+// lockedDiv.innerHTML = "0/5";
+
+const lights = dqs('.lights');
+
+lights.style.backgroundImage = lights_all_off;
+lights.style.backgroundRepeat = "no-repeat";
+lights.style.backgroundSize = "100%";
+
 let counter = 0, countError = 0;
 const nbrGoodProb = 5;
+
+lockedDiv.innerHTML = "0/" + nbrGoodProb;
 
 // let music = makeSound(musicWav, setupMusic);
 
@@ -168,6 +200,7 @@ const updateLanguage = () => {
 updateLanguage();
 
 // Declaration all elements in index.html
+// const dqs = (obj) => dqs(obj);
 
 const formDiv = CreateDivFnc({classes:['step-next', 'step-00', 'formDiv'], step: page.form,});
 
@@ -179,34 +212,34 @@ const etape_3 = CreateDivFnc({classes:['step-next', 'step-3'], step:page.step3,}
 
 const formButton = CreateDivFnc({classes:['step-next', 'step-button'], step:'',});
 
-const info = document.querySelector('.info');
-const about = document.querySelector('.about');
-const infoClick = document.querySelector('.info-click');
-const aboutClick = document.querySelector('.about-click');
+const info = dqs('.info');
+const about = dqs('.about');
+const infoClick = dqs('.info-click');
+const aboutClick = dqs('.about-click');
 
-const checkBox = document.querySelector('.toggler');
+const checkBox = dqs('.toggler');
 
-const divBtn = document.createElement('div');
+const divBtn = dce('div');
 
-const btn = document.createElement('button');
+const btn = dce('button');
 
-const step1DivMsg = document.createElement('div');
+const step1DivMsg = dce('div');
 
-const step2DivMsg = document.createElement('div');
+const step2DivMsg = dce('div');
 
-const step3DivMsg = document.createElement('div');
+const step3DivMsg = dce('div');
 
-const nextProbMsg = document.createElement('div');
+const nextProbMsg = dce('div');
 
-const heading = document.createElement('div');
-
-
-const subAll = document.querySelectorAll('.sub-menu-div');
-const subItems = document.querySelectorAll('.sub-menu');
-const formsClickable = document.querySelectorAll('.has-sub-menu');
+const heading = dce('div');
 
 
-const app = document.querySelector('.root');
+const subAll = dqsa('.sub-menu-div');
+const subItems = dqsa('.sub-menu');
+const formsClickable = dqsa('.has-sub-menu');
+
+
+const app = dqs('.root');
 
 divBtn.classList.add('divBtn');
 
@@ -216,8 +249,8 @@ divBtn.append(btn);
 // END of declaration all elements in index.html
 
 // let step1 = app.querySelector('.step-next.step-1');
-// let step2 = document.querySelector('.step-next.step-2');
-// let step3 = document.querySelector('.step-next.step-3');
+// let step2 = dqs('.step-next.step-2');
+// let step3 = dqs('.step-next.step-3');
 
 let formsArr = [
   '(x+b<sub>1</sub>)(x+b<sub>2</sub>)',
@@ -229,8 +262,8 @@ let formsArr = [
 let formActive = 0;
 
 document.title = page.title;
-document.querySelector(".menu-item.info-click").innerHTML = menuList.menu0;
-document.querySelector(".menu-item.about-click").innerHTML = menuList.menu1;
+dqs(".menu-item.info-click").innerHTML = menuList.menu0;
+dqs(".menu-item.about-click").innerHTML = menuList.menu1;
 
 /**
  * props.anPos = props.anPos || false;
@@ -389,12 +422,12 @@ let updateSteps = from => {
     if (prob.step_1_done && prob.step_2_done && prob.step_3_done) {
       if (countError === 0) {
         counter += 1;
-        lockedDiv.innerHTML = counter;
+        lockedDiv.innerHTML = counter + '/' + nbrGoodProb;
         
       } else {
         if (counter > 0) {
           counter -= 1;
-          lockedDiv.innerHTML = counter;
+          lockedDiv.innerHTML = counter + '/' + nbrGoodProb;
         }
       }
 
@@ -787,10 +820,14 @@ addListernerForms();
 
 app.append(formDiv.div, probTxt.div, etape_1.div,step1DivMsg, etape_2.div, step2DivMsg, etape_3.div, step3DivMsg, divBtn, nextProbMsg);
 
-window.addEventListener('load', function() {
-  // updateCanvas(ctx, images, screen.width, screen.height);
-  updateCanvas(ctx, images, window.innerWidth, window.innerHeight);
-})
+// window.addEventListener('load', function() {
+//   // updateCanvas(ctx, images, screen.width, screen.height);
+//   updateCanvas(ctx, images, window.innerWidth, window.innerHeight);
+
+// console.log('Start show page loaded = ', Date.now())
+
+
+// });
 
 updateCanvas(ctx, images, window.innerWidth, window.innerHeight);
 
@@ -819,4 +856,7 @@ function loadGameV2(){
   let game = window.open("game.html?"+params);
 }
 
+// console.log('Start show page loaded = ', Date.now())
+
 } // END show page
+

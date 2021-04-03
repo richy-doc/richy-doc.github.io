@@ -13,6 +13,8 @@ import assets from '../utils/assetsmain.js';
 
 import makeSound from '../utils/makesound.js';
 
+// console.log('GAME ANIMATION')
+
 
 let soundsToLoad = [
   "./sounds/music.wav",
@@ -772,6 +774,9 @@ window.addEventListener('load', function() {
   } else {
     checkBox.click();
     loading = false;
+    htmlEl.style.background = "url('./images/image_0.png')";
+    htmlEl.style.backgroundRepeat = "no-repeat";
+    htmlEl.style.backgroundSize = "100%";
   }
 
 });

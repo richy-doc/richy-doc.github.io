@@ -30,8 +30,10 @@ html {
   color: $font-color;
   // background-image: linear-gradient($primary-color-full, $font-color-on-borad);
   // scrollbar-color: $btn-back-color $btn-shadow-color;
-  background: url('../images/image_0.png') no-repeat center center fixed;
-  background-size: cover;
+  background: url('../images/image_opening.png') no-repeat center center fixed;
+  // background: url('../images/image_0.png') no-repeat center center fixed;
+  background-size: 100%;
+  // background-size: cover;
 }
 
 body {
@@ -390,9 +392,9 @@ table {
   // border: 2px solid black;
 }
 
-li::before {
-  content: '=';
-  // content: '\02261';
-  color: $font-color-on-borad;
-  margin-right: 0.2rem;
-}
+// li::before {
+//   content: '=';
+//   // content: '\02261';
+//   color: $font-color-on-borad;
+//   margin-right: 0.2rem;
+// }
