@@ -15,6 +15,16 @@ import makeSound from '../utils/makesound.js';
 
 // console.log('GAME ANIMATION')
 
+const dqs = (obj) => document.querySelector(obj);
+const dqsa = (obj) => document.querySelectorAll(obj);
+const dce = (obj) => document.createElement(obj);
+
+//Assets to load before showing the main page
+
+// console.log('Start = ', Date.now())
+
+const menu_wrap = dqs('.menu-wrap');
+
 
 let soundsToLoad = [
   "./sounds/music.wav",
@@ -24,50 +34,26 @@ let soundsToLoad = [
 let arrayToLoad = [].concat(soundsToLoad);
 let music;
 
+let waitVideo = document.querySelector('video');
+
+let wait = document.querySelector('.wait');
+
 // let music = assets["./sounds/music.wav"];
 // setupMusic();
 
-assets.load(arrayToLoad).then(() => console.log('Loaded sounds'));
+// assets.load(arrayToLoad).then(() => console.log('Loaded sounds'));
 
-//Starting game
+assets.load(arrayToLoad).then(() => {
+  let calc = 0;
+  // for ( let i = 0; i < 10000; i +=1){ console.log('I=',i)}
+  // showPage();
+  setTimeout(() => {
+    showPage();
+  }, 8000);
+});
 
-const htmlEl = document.getElementsByTagName('html')[0];
-
-const language = navigator.language || navigator.userLanguage;
-
-let page = undefined;
-let menuList = undefined;
-let timer = undefined;
-let loading = true;
-
-let options = [];
-let optionsInArr = undefined;
-let optionActive = undefined;
-let arrProb = [];
-// let arrProbActive = 0;
-let nbrProb = 400;
-let tries = 0;
-let tryActive = false;
-let keepProb = true;
-let arrResStudent = [];
+//get parameters in url
 let menuActive = {};
-let probId = 0;
-
-let blockEverything = false;
-
-const nbrMinOption_1 = 2;
-const nbrMinOption_2 = 5;
-const maxTimeOption_3 = 15;
-// const maxTimeOption_3 = 60;
-
-function resetGameParams() {
-
-  arrResStudent = [];
-  divHeader1.innerHTML = page.number+arrResStudent.length;
-  probId = 0;
-
-}
-
 let params = getParams();
 
 function getParams() {
@@ -99,6 +85,88 @@ function checkMenuParams() {
 
   return "OK";
 }
+
+const msgBlock = document.createElement('div');
+msgBlock.classList.add('msg-block');
+
+document.body.append(msgBlock);
+
+let blockEverything = false;
+
+const msg = document.querySelector('.message');
+
+//Starting game
+
+function showPage() {
+  
+const htmlEl = document.getElementsByTagName('html')[0];
+
+const language = navigator.language || navigator.userLanguage;
+
+let page = undefined;
+let menuList = undefined;
+let timer = undefined;
+let loading = true;
+
+let options = [];
+let optionsInArr = undefined;
+let optionActive = undefined;
+let arrProb = [];
+// let arrProbActive = 0;
+let nbrProb = 400;
+let tries = 0;
+let tryActive = false;
+let keepProb = true;
+let arrResStudent = [];
+// let menuActive = {};
+let probId = 0;
+
+// let blockEverything = false;
+
+const nbrMinOption_1 = 2;
+const nbrMinOption_2 = 5;
+const maxTimeOption_3 = 15;
+// const maxTimeOption_3 = 60;
+
+function resetGameParams() {
+
+  arrResStudent = [];
+  divHeader1.innerHTML = page.number+arrResStudent.length;
+  probId = 0;
+
+}
+
+// let params = getParams();
+
+// function getParams() {
+//   let params = new URLSearchParams(window.location.search);
+//   let menu = params.get("menu");
+//   let subMenu = params.get("subMenu");
+//   return {
+//     menu:menu,
+//     subMenu: subMenu
+//   }
+// }
+
+// menuActive.menu = params.menu;
+// menuActive.subMenu = params.subMenu;
+
+// function checkMenuParams() {
+//   let m = menuActive.menu;
+//   let s = menuActive.subMenu;
+
+//   if (m !== "form-0" && m !== "form-1" && m!== "form-2") {
+//     console.log('menu not good _-_-__--_____---_');
+//     return "Error in parameter form";
+//   };
+
+//   if (s !== "item-0" && s !== "item-1" && s !== "item-2") {
+//     console.log('item not ok ++++++++++++++++++');
+//     return "Error in parameter item";
+//   };
+
+//   return "OK";
+// }
 
 // checkMenuParams();
 
@@ -189,12 +257,12 @@ const heading = document.createElement('div');
 
 const menuItems = document.querySelectorAll('.menu-item');
 
-const msg = document.querySelector('.message');
+// const msg = document.querySelector('.message');
 
-const msgBlock = document.createElement('div');
-msgBlock.classList.add('msg-block');
+// const msgBlock = document.createElement('div');
+// msgBlock.classList.add('msg-block');
 
-document.body.append(msgBlock);
+// document.body.append(msgBlock);
 
 const app = document.querySelector('.root');
 
@@ -754,7 +822,19 @@ function shuffleProb(array) {
 
 app.append(divHeader, divProbTxt.div, response.div, step1DivMsg, divBtn, nextProbMsg, divResume);
 
-window.addEventListener('load', function() {
+checkBox.click();
+loading = false;
+
+waitVideo.pause();
+waitVideo.currentTime = 0;
+
+wait.style.display = 'none';
+
+menu_wrap.style.display = "block";
+
+} // END show page
+
+window.addEventListener('load', function() {  
   
   if (checkMenuParams() !== "OK") {
 
@@ -772,11 +852,12 @@ window.addEventListener('load', function() {
     });
     blockEverything = true;
   } else {
-    checkBox.click();
-    loading = false;
-    htmlEl.style.background = "url('./images/image_0.png')";
-    htmlEl.style.backgroundRepeat = "no-repeat";
-    htmlEl.style.backgroundSize = "100%";
+    // checkBox.click();
+    // loading = false;
+    // htmlEl.style.background = "url('./images/image_0.png') no-repeat center center fixed";
+    // // htmlEl.style.backgroundRepeat = "no-repeat";
+    // // htmlEl.style.backgroundSize = "cover";
+    // htmlEl.style.backgroundSize = "100% 100%";
   }
 
 });

@@ -5,9 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="content-type" content="audio/x-wav; autoplay '*'">
   <link rel="stylesheet" type="text/css" href="./styles/game.css">
-  <link rel="icon" type="image/x-ico" href="favicon.ico">
+  <!-- <link rel="icon" type="image/x-ico" href="favicon.ico"> -->
+  <link rel="icon" type="image/png" href="./images/favicon_1.png">
 </head>
 <body>
+
+  <div class="wait">
+    <video class="wait-video" autoplay loop>
+      <source src="./images/wait.webm">
+      <source src="./images/wait.mov" type='video/mp4; codecs="hvc1"'>
+      <p>Vous devez patientez ...</p>
+    </video>
+      <p>Patientiez quelques secondes ...</p>
+      <p>Préparation des exercices ...</p>
+    
+  </div>
+
   <div class="menu-wrap">
     <input type="checkbox" class="toggler">
     <div class="hamburger">
@@ -29,7 +42,7 @@
 
           <div class="menu-item diff-prob">
             <p class="text">Tentatives différentes</p>
-            <p class="sub-text">Tous les essaies auront de nouveaux problèmes.</p>
+            <p class="sub-text">Tous les essais auront de nouveaux problèmes.</p>
           </div>
 
           <hr>

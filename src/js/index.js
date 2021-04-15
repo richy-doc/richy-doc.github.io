@@ -30,6 +30,8 @@ const dce = (obj) => document.createElement(obj);
 
 // console.log('Start = ', Date.now())
 
+const menu_wrap = dqs('.menu-wrap');
+
 let imagesToLoad = [
   "./images/image_0.png",
   "./images/image_1.png",
@@ -39,11 +41,11 @@ let imagesToLoad = [
   "./images/image_5.png",
   "./images/cadenas_close_200x400.png",
   "./images/cadenas_open_200x400.png",
-  "./images/lights_all_off.png",
-  "./images/lights_green_on.png",
-  "./images/lights_red_on.png",
-  "./images/lights_yellow_on.png",
-  "./images/lights_all_on.png"
+  "./images/lights_all_off_200.png",
+  "./images/lights_green_on_200.png",
+  "./images/lights_red_on_200.png",
+  "./images/lights_yellow_on_200.png",
+  "./images/lights_all_on_200.png"
 ];
 
 let soundsToLoad = [
@@ -54,13 +56,20 @@ let soundsToLoad = [
 let arrayToLoad = imagesToLoad.concat(soundsToLoad);
 let music;
 
+let waitVideo = document.querySelector('video');
+
+let wait = document.querySelector('.wait');
+
 // let music = assets["./sounds/music.wav"];
 // setupMusic();
 
 assets.load(arrayToLoad).then(() => {
   let calc = 0;
   // for ( let i = 0; i < 10000; i +=1){ console.log('I=',i)}
-  showPage();
+  // showPage();
+  setTimeout(() => {
+    showPage();
+  }, 8000);
 });
 
 // let music  = makeSound("./sounds/music.wav", setupMusic);
@@ -86,11 +95,11 @@ function showPage() {
 music = assets["./sounds/music.wav"];
 // setupMusic();
 
-const lights_red_on = "url("+  assets["./images/lights_red_on.png"].src +")";
-const lights_all_off = "url("+  assets["./images/lights_all_off.png"].src +")";
-const lights_green_on = "url("+  assets["./images/lights_green_on.png"].src +")";
-const lights_yellow_on = "url("+  assets["./images/lights_yellow_on.png"].src +")";
-const lights_all_on = "url("+  assets["./images/lights_all_on.png"].src +")";
+const lights_red_on = "url("+  assets["./images/lights_red_on_200.png"].src +")";
+const lights_all_off = "url("+  assets["./images/lights_all_off_200.png"].src +")";
+const lights_green_on = "url("+  assets["./images/lights_green_on_200.png"].src +")";
+const lights_yellow_on = "url("+  assets["./images/lights_yellow_on_200.png"].src +")";
+const lights_all_on = "url("+  assets["./images/lights_all_on_200.png"].src +")";
 const cadenas_open_200x400 = "url("+  assets["./images/cadenas_open_200x400.png"].src +")";
 const cadenas_close_200x400 = "url("+  assets["./images/cadenas_close_200x400.png"].src +")";
 
@@ -857,6 +866,13 @@ function loadGameV2(){
 }
 
 // console.log('Start show page loaded = ', Date.now())
+
+waitVideo.pause();
+waitVideo.currentTime = 0;
+
+wait.style.display = 'none';
+
+menu_wrap.style.display = "block";
 
 } // END show page
 
