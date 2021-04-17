@@ -87,7 +87,7 @@ function clgAsset() {
 
 // Main function to show the main page
 
-function showPage() {
+// function showPage() {
 
 // console.log('Start show page = ', Date.now())
 
@@ -108,16 +108,16 @@ const style = window.getComputedStyle(htmlEl, null).getPropertyValue('font-size'
 const fontSize = parseFloat(style);
 const lockedDiv = dqs('.locked');
 
-lockedDiv.style.backgroundImage = cadenas_close_200x400;
-lockedDiv.style.backgroundRepeat = "no-repeat";
-lockedDiv.style.backgroundSize = "100%";
+// lockedDiv.style.backgroundImage = cadenas_close_200x400;
+// lockedDiv.style.backgroundRepeat = "no-repeat";
+// lockedDiv.style.backgroundSize = "100%";
 // lockedDiv.innerHTML = "0/5";
 
 const lights = dqs('.lights');
 
-lights.style.backgroundImage = lights_all_off;
-lights.style.backgroundRepeat = "no-repeat";
-lights.style.backgroundSize = "100%";
+// lights.style.backgroundImage = lights_all_off;
+// lights.style.backgroundRepeat = "no-repeat";
+// lights.style.backgroundSize = "100%";
 
 let counter = 0, countError = 0;
 const nbrGoodProb = 5;
@@ -827,21 +827,42 @@ function addListernerForms() {
 addListernerForms();
 //END of adding event listener for forms
 
-app.append(formDiv.div, probTxt.div, etape_1.div,step1DivMsg, etape_2.div, step2DivMsg, etape_3.div, step3DivMsg, divBtn, nextProbMsg);
+function showPage() {
 
-// window.addEventListener('load', function() {
-//   // updateCanvas(ctx, images, screen.width, screen.height);
-//   updateCanvas(ctx, images, window.innerWidth, window.innerHeight);
+  lockedDiv.style.backgroundImage = cadenas_close_200x400;
+  lockedDiv.style.backgroundRepeat = "no-repeat";
+  lockedDiv.style.backgroundSize = "100%";
 
-// console.log('Start show page loaded = ', Date.now())
+  lights.style.backgroundImage = lights_all_off;
+  lights.style.backgroundRepeat = "no-repeat";
+  lights.style.backgroundSize = "100%";
 
 
-// });
+  app.append(formDiv.div, probTxt.div, etape_1.div,step1DivMsg, etape_2.div, step2DivMsg, etape_3.div, step3DivMsg, divBtn, nextProbMsg);
 
-updateCanvas(ctx, images, window.innerWidth, window.innerHeight);
+  // window.addEventListener('load', function() {
+  //   // updateCanvas(ctx, images, screen.width, screen.height);
+  //   updateCanvas(ctx, images, window.innerWidth, window.innerHeight);
 
-etape_1.divEditor.focus();
-etape_1.editor.setCaretPosition(0);
+  // console.log('Start show page loaded = ', Date.now())
+
+
+  // });
+
+  updateCanvas(ctx, images, window.innerWidth, window.innerHeight);
+
+  etape_1.divEditor.focus();
+  etape_1.editor.setCaretPosition(0);
+
+  waitVideo.pause();
+  waitVideo.currentTime = 0;
+
+  wait.style.display = 'none';
+
+  menu_wrap.style.display = "block";
+
+} // END of show page 2
+
 
 function loadGame(){
   let menu = menuActive.menu;
@@ -867,12 +888,12 @@ function loadGameV2(){
 
 // console.log('Start show page loaded = ', Date.now())
 
-waitVideo.pause();
-waitVideo.currentTime = 0;
+// waitVideo.pause();
+// waitVideo.currentTime = 0;
 
-wait.style.display = 'none';
+// wait.style.display = 'none';
 
-menu_wrap.style.display = "block";
+// menu_wrap.style.display = "block";
 
-} // END show page
+// } // END show page
 

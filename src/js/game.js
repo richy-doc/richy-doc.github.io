@@ -97,7 +97,7 @@ const msg = document.querySelector('.message');
 
 //Starting game
 
-function showPage() {
+// function showPage() {
   
 const htmlEl = document.getElementsByTagName('html')[0];
 
@@ -309,6 +309,8 @@ function resetAll() {
 
 function genArrProb(nbr) {
 
+  console.log(('IN gen prob'))
+
   arrProb = [];
 
   for (let i = 0; i <= nbr; i += 1) {
@@ -321,7 +323,7 @@ function genArrProb(nbr) {
       respArr: prob.step3Html
     })
   }
-}
+};
 
 genArrProb(nbrProb);
 
@@ -820,6 +822,8 @@ function shuffleProb(array) {
   }
 }
 
+function showPage(){
+
 app.append(divHeader, divProbTxt.div, response.div, step1DivMsg, divBtn, nextProbMsg, divResume);
 
 checkBox.click();
@@ -831,33 +835,36 @@ waitVideo.currentTime = 0;
 wait.style.display = 'none';
 
 menu_wrap.style.display = "block";
+} // END of show page 2
 
-} // END show page
+// } // END show page
 
-window.addEventListener('load', function() {  
+// window.addEventListener('load', function() {  
+
+//   // console.log('IN window load function')
   
-  if (checkMenuParams() !== "OK") {
+//   if (checkMenuParams() !== "OK") {
 
-    msgBlock.innerHTML = `Les paramètres de cette page ne sont pas conformes.<br>
-    Erreur: ${checkMenuParams()}<br>
-    Demandez de l'aide à votre administrateur réseau.
-    `;
-    msgBlock.classList.add('show');
+//     msgBlock.innerHTML = `Les paramètres de cette page ne sont pas conformes.<br>
+//     Erreur: ${checkMenuParams()}<br>
+//     Demandez de l'aide à votre administrateur réseau.
+//     `;
+//     msgBlock.classList.add('show');
     
-    window.addEventListener('click', function() {
-      msg.innerHTML = `Vous ne pouvez plus continuer tant que les erreurs ne seront pas réglées.<br>
-      Les paramètres de cette page ne sont pas conformes.<br>
-      Demandez de l'aide à votre administrateur réseau.
-      `
-    });
-    blockEverything = true;
-  } else {
-    // checkBox.click();
-    // loading = false;
-    // htmlEl.style.background = "url('./images/image_0.png') no-repeat center center fixed";
-    // // htmlEl.style.backgroundRepeat = "no-repeat";
-    // // htmlEl.style.backgroundSize = "cover";
-    // htmlEl.style.backgroundSize = "100% 100%";
-  }
+//     window.addEventListener('click', function() {
+//       msg.innerHTML = `Vous ne pouvez plus continuer tant que les erreurs ne seront pas réglées.<br>
+//       Les paramètres de cette page ne sont pas conformes.<br>
+//       Demandez de l'aide à votre administrateur réseau.
+//       `
+//     });
+//     blockEverything = true;
+//   } else {
+//     // checkBox.click();
+//     // loading = false;
+//     // htmlEl.style.background = "url('./images/image_0.png') no-repeat center center fixed";
+//     // // htmlEl.style.backgroundRepeat = "no-repeat";
+//     // // htmlEl.style.backgroundSize = "cover";
+//     // htmlEl.style.backgroundSize = "100% 100%";
+//   }
 
-});
+// });
