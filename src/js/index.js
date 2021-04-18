@@ -122,7 +122,7 @@ const lights = dqs('.lights');
 let counter = 0, countError = 0;
 const nbrGoodProb = 5;
 
-lockedDiv.innerHTML = "0/" + nbrGoodProb;
+// lockedDiv.innerHTML = "0/" + nbrGoodProb;
 
 // let music = makeSound(musicWav, setupMusic);
 
@@ -832,6 +832,8 @@ function showPage() {
   lockedDiv.style.backgroundImage = cadenas_close_200x400;
   lockedDiv.style.backgroundRepeat = "no-repeat";
   lockedDiv.style.backgroundSize = "100%";
+
+  lockedDiv.innerHTML = "0/" + nbrGoodProb;
 
   lights.style.backgroundImage = lights_all_off;
   lights.style.backgroundRepeat = "no-repeat";

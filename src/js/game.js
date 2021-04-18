@@ -309,8 +309,6 @@ function resetAll() {
 
 function genArrProb(nbr) {
 
-  console.log(('IN gen prob'))
-
   arrProb = [];
 
   for (let i = 0; i <= nbr; i += 1) {
